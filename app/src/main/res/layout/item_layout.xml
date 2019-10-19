@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="12dp"
-            android:text="Hello" />
+            android:text="@{viewModel.mProductTitle}" />
 
     </LinearLayout>
 </layout>

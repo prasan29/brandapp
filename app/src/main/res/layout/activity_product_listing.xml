@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -25,13 +25,13 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:layout_height="400dp"
+                    app:image="@{viewModel.mImageUrl}" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="hello" />
+                    android:text="@{viewModel.mProduct}" />
 
             </LinearLayout>
         </ScrollView>
