@@ -12,15 +12,16 @@ import com.brandapp.viewmodel.MainViewModel;
 
 public class MainActivity extends FragmentActivity {
 
-    ActivityMainBinding mBinding;
+    private ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        MainViewModel mainViewModel = ViewModelBuilder.generateViewModel(this, MainViewModel.class);
+        MainViewModel mainViewModel = ViewModelBuilder.generateViewModel(this,
+                MainViewModel.class);
         mBinding.setLifecycleOwner(this);
-        mainViewModel.setLifecycleOwner(this, this);
+        mainViewModel.setLifecycleOwner(this);
         mainViewModel.setRecyclerView(mBinding.recyclerView);
         mBinding.setViewModel(mainViewModel);
 

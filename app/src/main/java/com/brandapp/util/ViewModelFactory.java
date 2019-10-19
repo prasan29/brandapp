@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.brandapp.di.Injection;
 import com.brandapp.model.FetchDataTask;
 import com.brandapp.viewmodel.MainViewModel;
+import com.brandapp.viewmodel.ProductListingViewModel;
 
 /**
  * Factory class that provides SingleTon instance of the ViewModel.
@@ -45,6 +46,9 @@ public final class ViewModelFactory extends ViewModelProvider.NewInstanceFactory
         if (modelClass.isAssignableFrom(MainViewModel.class)) {
             //noinspection unchecked
             return (T) new MainViewModel(mApplication, mInjection);
+        } else if (modelClass.isAssignableFrom(ProductListingViewModel.class)) {
+            //noinspection unchecked
+            return (T) new ProductListingViewModel(mApplication, mInjection);
         } else {
             throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
         }

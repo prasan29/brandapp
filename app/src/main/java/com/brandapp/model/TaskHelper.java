@@ -3,7 +3,6 @@ package com.brandapp.model;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.brandapp.di.Injection;
-import com.brandapp.viewmodel.MainViewModel;
 
 public class TaskHelper {
     private Injection mInjection;
@@ -16,7 +15,7 @@ public class TaskHelper {
     }
 
     public void helpFetchData(
-            final MainViewModel.ObserveData<String> observeData) {
+            final ObserveData<String> observeData) {
         FetchDataTask fetchDataTask = mInjection.getFetchDataTask();
         fetchDataTask.setRequestValue(new FetchDataTask.RequestValues("Hello"));
         fetchDataTask.setCallback(
@@ -35,7 +34,7 @@ public class TaskHelper {
         fetchDataTask.run();
     }
 
-    public void helpFetchIntData(MainViewModel.ObserveData<Integer> observeData) {
+    public void helpFetchIntData(ObserveData<Integer> observeData) {
         FetchDataTask fetchDataTask = mInjection.getFetchDataTask();
         fetchDataTask.setRequestValue(new FetchDataTask.RequestValues("1"));
         fetchDataTask.setCallback(
